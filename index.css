@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 80px;
+    display: flex;
+}
+
+a img {
+    display: none;
+}
+
+.headerMenu {
+    display: flex;
+    gap: 20px;
+    display: none;
+    transition: all 0.3s;
+}
+
+.headerMenu.open {
+    display: block;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+}
+
+.headerMenu a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.headerMenu a:hover {
+    color: red;
+    background-color: aqua;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mainVisual {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: background-image 1s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.mainVisual p {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.footerMenu {
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+}
+
+.footerMenu a {
+    text-decoration: none;
+}
+
+.footerMenu a:hover {
+    color: red;
+    background-color: aqua;
+}
+
+footer {
+    text-align: center;
+}
+
+.menuButton {
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.menuButton_line {
+    display: block;
+    height: 10px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+.menuButton_line:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menuButton_line:nth-of-type(3) {
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.menuButton.open .menuButton_line:nth-of-type(1) {
+    transform: translateY(-50%) rotate(45deg);
+    top: 50%;
+}
+
+.menuButton.open .menuButton_line:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menuButton.open .menuButton_line:nth-of-type(3) {
+    transform: translateY(-50%) rotate(-45deg);
+    top: 50%;
+}
+
+@media screen and (max-width: 430px) {
+    .footerMenu {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .c {
+        display: none;
+    }
+
+    a img {
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+
+    .headerMenu {
+        max-width: 500px;
+    }
+}
